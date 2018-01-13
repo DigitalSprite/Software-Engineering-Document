@@ -33,7 +33,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
 
 
-###1.3 目标人群
+### 1.3 目标人群
 
 - 学生：Dataverse作为全世界知名的开源项目，具有很好的项目参考和借鉴的价值。让学生参与到Dataverse的开发过程中，能有效提高学生对软件工程整个流程的理解，提升学生的项目工程能力、阅读理解代码的能力。
 - 合作公司：Dataverse开源平台具有完善的数据展示计算平台，很适合部分企业进行定制化的改造进化。但由于Dataverse本身太过繁杂，不适合单个企业进行维护更新。
@@ -51,11 +51,11 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
 
 
-##2. 项目需求分析
+## 2. 项目需求分析
 
 下面给出Dataverse项目的KAOS图来表示项目需求规约：
 
-![KAO](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\KAO.png)
+![KAO](img/KAO.png)
 
 由图所示：项目需求可以分成三个部分：
 
@@ -73,7 +73,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
 
 
-###2.3 数据的展示
+### 2.3 数据的展示
 
 数据的展示全部交由TwoRavens实现。显示数据分为两个部分：数据查看和数据计算。数据查看是指基于现有数据的查看，其中包括目录上的简要信息，点击单个集合的数据详细信息——其中有两种形式：图表形式和详细数据展示。
 而数据计算方面，分为数据计算成功和失败两个情况。计算成功代表所有计算步骤均符合数学要求，会得到新的变量和相关数据；计算失败代表再某个环节出现了问题，此时应当由提示信息。
@@ -88,9 +88,9 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
 
 
-###3.1 用例图
+### 3.1 用例图
 
-![Use Case](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Use Case.png)
+![Use Case](img/Use Case.png)
 
 
 
@@ -104,7 +104,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：数据提供者。这个提供者可以是数据库，也可以是任意形式的数据提供来源
   - 前提条件：拥有批量的离散型数据
   - 完成后状态：.tab格式的数据源
-  - 过程流：![Process flow 1](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 1.png)
+  - 过程流：![Process flow 1](img/Process flow 1.png)
   - 异常处理：若转换过程中出现问题，则取消本次转换流程
 
 - .tab文件下载
@@ -113,7 +113,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：数据应用者，该actor负责操作下载的整个流程
   - 前提条件：有.tab文件
   - 完成后条件：出现`test.tab`文件的下载方式
-  - 过程流：![Process flow 2](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 2.png)
+  - 过程流：![Process flow 2](img/Process flow 2.png)
 
   ​
 
@@ -123,7 +123,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：数据应用者，该actor负责操作下载的整个流程
   - 前提条件：有.xml文件
   - 完成后条件：出现`test-ddi.xml`文件的下载方式
-  - 过程流：![Process flow 5](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 5.png)
+  - 过程流：![Process flow 5](img/Process flow 5.png)
 
 - .xml文件生成
 
@@ -137,7 +137,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
   - 过程流：
 
-    ![Process flow 3](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 3.png)
+    ![Process flow 3](img/Process flow 3.png)
 
   ​
 
@@ -147,7 +147,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：数据应用者，该actor负责操作下载的整个流程
   - 前提条件：有.prep文件
   - 完成后条件：出现`test.prep`文件的下载方式
-  - 过程流：![Process flow 6](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 6.png)
+  - 过程流：![Process flow 6](img/Process flow 6.png)
 
 - .prep文件生成
 
@@ -155,7 +155,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：数据应用者，控制文件生成的过程
   - 前提条件：拥有.tab文件
   - 完成后条件：在对应的tab, xml, prep 文件夹内含有：`test.tab`， `test.prep`的三个名字相关联的文件
-  - 过程流：![Process flow 7](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 7.png)
+  - 过程流：![Process flow 7](img/Process flow 7.png)
 
 - tab文件管理
 
@@ -169,7 +169,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
   - 过程流：
 
-    ![Process flow 4](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 4.png)
+    ![Process flow 4](img/Process flow 4.png)
 
   ​
 
@@ -185,7 +185,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
   - 过程流：
 
-    ![Process flow 8](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 8.png)
+    ![Process flow 8](img/Process flow 8.png)
 
 - xml文件管理
 
@@ -193,7 +193,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：数据应用者，数据提供者
   - 前提条件：拥有数据源
   - 完成后条件：可以进行xml文件的生成和下载
-  - 过程流：![Process flow 9](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 9.png)
+  - 过程流：![Process flow 9](img/Process flow 9.png)
 
 - 数据查看
 
@@ -207,7 +207,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
   - 过程流：
 
-    ![Process flow 10](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 10.png)
+    ![Process flow 10](img/Process flow 10.png)
 
   ​
 
@@ -217,7 +217,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：TwoRavens
   - 前提条件：三种文件：`test.tab, test.prep, test-ddi.xml`均存在
   - 完成后条件：在TwoRavens的界面左栏能搜索到变量的相关信息，中央每个变量用一个圆圈表示。
-  - 过程流：![Process flow 11](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 11.png)
+  - 过程流：![Process flow 11](img/Process flow 11.png)
 
 
 
@@ -226,7 +226,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
   - 参与者：TwoRavens
   - 前提条件：三种文件：`test.tab, test.prep, test-ddi.xml`均存在
   - 完成后条件：在TwoRavens的界面左栏能搜索到变量的相关信息，中央每个变量用一个圆圈表示。
-  - 过程流：![Process flow 12](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 12.png)
+  - 过程流：![Process flow 12](img/Process flow 12.png)
 
 
 
@@ -256,7 +256,7 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
   - 过程流：
 
-    ![Process flow 13](C:\Users\Stephen\Desktop\Dataverse文档\Dataverse需求规约\Process flow 13.png)
+    ![Process flow 13](img/Process flow 13.png)
 
 
 
