@@ -51,4 +51,63 @@ If you build war file,  you can simply put the war file into tomcat.
 
 ## How to use
 
-We packaged 5 http interfaces, 
+We implemented and packaged 5 http interfaces,  which were used both for users and TwoRavens. Here you can see a simple description about these interfaces. More detail information can be found in High-level Design document.
+
+***create/xml?name={test}***
+
+This interface can create .xml file according to the .tab file.
+
+***create/prep?name={test}***
+
+This interface can create .prep file according to the .tab file.
+
+***download/xml?name={test}***
+
+This interface candownload .xml file.
+
+***download/prep?name={test}***
+
+This interface candownload .prep file.
+
+***download/tab?name={test}***
+
+This interface candownload .tab file.
+
+## Code Structure
+
+```
+main
+├── java
+│   └── com
+│       └── monetware
+│           └── demo
+│               ├── DemoApplication.java
+│               ├── controller (Create and Download implementation)
+│               │   ├── CreationController.java
+│               │   ├── DownLoadController.java
+│               │   └── UploadController.java
+│               ├── prep (Create .prep file)
+│               │   ├── RemoteDataFrameService.java
+│               │   ├── preprocess.R
+│               │   └── scripts
+│               │       └── dataverse_r_functions.R
+│               ├── variable (Some useful Variable)
+│               │   └── root.java
+│               └── xml (Create .xml file)
+│                   ├── CreateXML.java
+│                   ├── SummaryStatCalculator.java
+│                   └── WriteXML.java
+└── resources 
+    ├── application.properties
+    ├── index.html
+    ├── preprocess.R
+    └── static (Store created files)
+        └── files
+            ├── prep
+            │   └── test.prep
+            ├── tab
+            │   └── test.tab
+            └── xml
+                └── test-ddi.xml
+```
+
