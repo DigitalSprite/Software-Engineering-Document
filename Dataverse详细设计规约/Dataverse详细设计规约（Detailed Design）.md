@@ -175,3 +175,146 @@
   - 参与者：TwoRavens
   - 前提条件：满足计算的所有要求
   - 完成后条件：生成新的变量代表计算后的结果，变量中含有详细信息。
+
+
+
+## 2.类设计
+
+![class](img/class.png)
+
+---
+
+### RemoteDataFrameService
+
+*com.monetware.demo*
+
+_public class **RemoteDataFrameSerive**_
+
+系统中关于生成.prep文件的实例
+
+#### 变量
+
+| 种类                    | 变量名                       | 描述            |
+| --------------------- | ------------------------- | ------------- |
+| private static Logger | dbgLog                    | 获取包           |
+| public static String  | LOCAL_TEMP_DIR            | 存放生成的prep文件路径 |
+| private static String | RSERVE_HOST               | Rserve的IP地址   |
+| private static int    | RSERVE_PORT               | Rserve的端口     |
+| private static String | DATAVERSE_R_PREPROCESSING | R脚本的路径        |
+| public String         | PID                       | 标记号（暂时无用）     |
+| public String         | tempFileNameIn            | 读入的临时文件的名字    |
+| public String         | tempFileNameOut           | 输出的临时文件的名字    |
+
+#### 方法
+
+> getFileSize
+
+* public int getFileSize(RConnection c, String targetFilename)
+
+获取文件大小
+
+**返回**
+
+文件大小
+
+**参数**
+
+- RConnection c：R语言连接
+- String targetFilename：文件名
+
+**异常**
+
+无
+
+> transferRemoteFile
+
+- public File transferRemoteFile(RConnection c, String targetFilename, String tmpFilePrefix, String tmpFileExt, int fileSize)
+
+传输并获取R语言计算好的结果文件
+
+**返回**
+
+计算结果文件
+
+**参数**
+
+- RConnection c：R语言连接
+- String targetFilename：目标文件名
+- String tmpFilePrefix：读入文件名
+- String tmpFileExt：输出文件名
+- int fileSize：文件大小
+
+**异常**
+
+无
+
+> runDataPreprocessing
+
+- public File runDataPreprocessing(String path, String name) throws IOException
+
+执行prep文件生成的主函数
+
+**返回**
+
+最终的结果文件
+
+**参数**
+
+- String path：文件路径
+- String name：文件名
+
+**异常**
+
+IOException
+
+> readLocalResource
+
+- private static String readLocalResource(String path)
+
+读取本地资源文件（主要为R语言脚本）
+
+**返回**
+
+字符串形式的R语言脚本
+
+**参数**
+
+- String path：文件路径
+
+**异常**
+
+无
+
+### CreateXML
+
+*com.monetware.xml*
+
+_public class **CreateXML**_
+
+用于生成XML文件
+
+#### 变量
+
+无
+
+#### 方法
+
+> CreateFile
+
+- public String CreateFile(String fileName) throws Exception
+
+用于生成xml文件
+
+**返回**
+
+- 如果创建成功，则返回 "create file successfully!"
+- 如果xml文件已经存在，则返回 "xml file already exist!"
+
+**参数**
+
+- String fileName：文件名
+
+**异常**
+
+Exception
+
