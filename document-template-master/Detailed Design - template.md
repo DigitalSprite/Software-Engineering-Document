@@ -39,11 +39,11 @@ The student instance in the system.
 
 #### Fields
 
-| Modifier and Type | Field | Description |
-| :-- | :-- | :-- |
+| Modifier and Type   | Field   | Description              |
+| :------------------ | :------ | :----------------------- |
 | *public static int* | TYPE_ID | the user type identifier |
-| *private int* | id | student id |
-| *private string* | name | student name |
+| *private int*       | id      | student id               |
+| *private string*    | name    | student name             |
 
 #### Constructors
 
@@ -94,4 +94,4 @@ the student name
 
 GeneralExpection
 
---- 
+---
