@@ -184,6 +184,8 @@
 
 ---
 
+
+
 ### RemoteDataFrameService
 
 *com.monetware.demo*
@@ -285,6 +287,8 @@ IOException
 
 无
 
+
+
 ### CreateXML
 
 *com.monetware.xml*
@@ -317,4 +321,303 @@ _public class **CreateXML**_
 **异常**
 
 Exception
+
+
+
+### WriteXML
+
+*com.monetware,xml*
+
+*public class WriteXML*
+
+用于XML文件的写入
+
+#### 变量
+
+| 种类                                       | 变量名    | 描述             |
+| ---------------------------------------- | ------ | -------------- |
+| private static ArrayList<ArrayList<String>> | data   | 用于存储从文件当中获取的数据 |
+| private static int                       | height | 用于表示tab文件数据的行数 |
+| private static int                       | width  | 用于存储tab文件数据的行数 |
+
+#### 方法
+
+> getOutputStream
+
+- public OutputStream getOutputStream(File file, String title, String agency, String auth, String bib, String filename, String fileType) throws IOException
+
+用于将文件内容写到OutputStream里以便成成xml文件
+
+**返回**
+
+含有处理好的文件数据的OutputStream
+
+**参数**
+
+- File file：被读取数据的文件
+- String title：该数据的标题
+- String agency：该数据的代理人
+- String auth：该数据的作者
+- String bib：该数据相关信息
+- String filename：要写的文件的名称
+- String type：文件的类型
+
+**异常**
+
+Exception
+
+> writeAttribute
+
+- private void writeAttribute(XMLStreamWriter xmlw, String name, String value) throws XMLStreamException
+
+该方法是用来简化xml文件插入标签的
+
+**返回**
+
+null
+
+**参数**
+
+- XMLStreamWriter xmlw：XML文件写控制器
+- String name：xml标签的名字
+- String value：xml标签的内容
+
+**异常**
+
+XMLStreamException
+
+> dataCheck
+
+- private static void dataCheck
+
+用来查看文件的数据中有无错误的地方斌惊进行改正
+
+**返回**
+
+null
+
+**参数**
+
+null
+
+**异常**
+
+null
+
+
+
+### calculateSummaryStatistics
+
+com.monetware.xml
+
+public static double[] calculateSummaryStatistics
+
+负责对tab文件中读取的数据进行处理
+
+#### 变量
+
+无
+
+#### 方法
+
+> calculateSummaryStatistics
+
+- public static double[] calculateSummaryStatistics(int line, int height, ArrayList<ArrayList<String>> data)
+
+通过一列的数据（对应这个系统的一个变量）算出它们的8个特征值
+
+**返回**
+
+返回这一列对应变量的8个特征值
+
+**参数**
+
+- int line：指定对应列数
+- int height：定义数据的数目
+- ArrayList<ArrayList<String>>：存储数据的二位列表
+
+**异常**
+
+无
+
+> evaluate
+
+- public static double evaluate(double[] values)
+
+方法用来判断过度是否允许计算偏差
+
+**返回**
+
+如果可以处理，返回偏差值
+
+若数据不合要求，返回无穷大的值
+
+**参数**
+
+- double[] values：选出的有效的数字
+
+**异常**
+
+无
+
+- public static double evaluate(double[] values, int begin, int length)
+
+是前述方法的重载，在它的基础上添加了首、尾两位
+
+> ev
+
+- private static double ev(double[] values, int begin, int length)
+
+方法是计算方差的具体函数，为下一步计算方差做预处理
+
+**返回**
+
+返回偏差值
+
+**参数**
+
+- double[] values：要处理的数据
+
+
+- int begin：开始位
+- int length：长度
+
+**异常**
+
+无
+
+> deal
+
+- private static double deal(double[] values, int begin, int length)
+
+用来计算指定位数的值的和
+
+**参数**
+
+- double[] values：要处理的数据
+
+
+- int begin：开始位
+- int length：长度
+
+**异常**
+
+无
+
+> prepareForSummaryStatsAlternative
+
+- private static double[] prepareForSummaryStatsAlternative(Double[] x, int length)
+
+除去不符合要求的数据
+
+**返回**
+
+返回处理后的数据
+
+**参数**
+
+- Double[] x：原始数据
+- int length：数据长度
+
+> countInvalidValues
+
+- private static int countInvalidValues(Double[] x)
+
+计算不符合规定的数据的个数
+
+**异常**
+
+无
+
+> calculateMedian
+
+- private static double calculateMedian(double[] values)
+
+计算中位数
+
+**返回**
+
+返回一列数的中位数
+
+**参数**
+
+- double[] values：待处理的数据
+
+**异常**
+
+无
+
+> calculateMean
+
+- private static double calculateMean(double[] values)
+
+计算一列数的平均值
+
+**返回**
+
+返回一列数的平均值
+
+**参数**
+
+- double[] values：待处理的数据
+
+**异常**
+
+无
+
+> calculateSum
+
+- private static double calculateSum(double[] values)
+
+返回一列数的和
+
+**返回**
+
+返回一列数的和
+
+**参数**
+
+- double[] values：待处理的数据
+
+**异常**
+
+无
+
+> getMin
+
+- private static double getMin(double[] var)
+
+返回一列数的最小值
+
+**返回**
+
+返回一列数的最小值
+
+**参数**
+
+- double[] var：待处理的数据
+
+**异常**
+
+无
+
+> getMax
+
+- private static double getMax(double[] var)
+
+返回一列数的最大值
+
+**返回**
+
+返回一列数的最大值
+
+**参数**
+
+- double[] var：待处理的数据
+
+**异常**
+
+无
+
+
 
