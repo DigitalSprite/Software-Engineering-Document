@@ -55,8 +55,6 @@ TwoRavens是Dataverse开源项目的子项目之一，它是提供了Dataverse�
 
 ![KAO](img/KAO.png)
 
-由图所示：项目需求可以分成三个部分：
-
 
 
 ### 2.1 数据集的创建
